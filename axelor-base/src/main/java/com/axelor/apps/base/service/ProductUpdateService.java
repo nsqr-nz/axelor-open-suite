@@ -16,24 +16,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.axelor.apps.account.service.analytic;
+package com.axelor.apps.base.service;
 
-import com.axelor.apps.account.db.AnalyticAccount;
-import com.axelor.apps.account.db.AnalyticAxis;
-import com.axelor.apps.account.db.AnalyticMoveLine;
 import com.axelor.apps.base.AxelorException;
-import com.axelor.apps.base.db.Company;
-import java.util.List;
+import com.axelor.apps.base.db.Product;
 
-public interface AnalyticToolService {
+public interface ProductUpdateService {
 
-  boolean isManageAnalytic(Company company) throws AxelorException;
-
-  boolean isPositionUnderAnalyticAxisSelect(Company company, int position) throws AxelorException;
-
-  boolean isAxisAccountSumValidated(
-      List<AnalyticMoveLine> analyticMoveLineList, AnalyticAxis analyticAxis);
-
-  boolean isAnalyticAxisFilled(
-      AnalyticAccount analyticAccount, List<AnalyticMoveLine> analyticMoveLineList);
+  void updateCostPriceFromView(Product product) throws AxelorException;
 }
