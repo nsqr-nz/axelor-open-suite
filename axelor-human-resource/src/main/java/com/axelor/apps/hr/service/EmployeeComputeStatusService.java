@@ -16,23 +16,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.axelor.apps.account.service.moveline;
+package com.axelor.apps.hr.service;
 
-import com.axelor.apps.account.db.Move;
-import com.axelor.apps.account.db.MoveLine;
-import com.axelor.apps.base.AxelorException;
-import java.util.List;
+import com.axelor.apps.hr.db.Employee;
 
-public interface MoveLineCheckService {
-  void checkAnalyticByTemplate(MoveLine moveLine) throws AxelorException;
+public interface EmployeeComputeStatusService {
 
-  void checkAnalyticAxes(MoveLine moveLine) throws AxelorException;
-
-  void checkDebitCredit(MoveLine moveLine) throws AxelorException;
-
-  void checkDates(Move move) throws AxelorException;
-
-  void checkAnalyticAccount(List<MoveLine> moveLineList) throws AxelorException;
-
-  void checkAnalyticMoveLinesPercentage(MoveLine moveLine) throws AxelorException;
+  public String getEmployeeStatus(Employee employee);
 }
