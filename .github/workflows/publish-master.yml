@@ -27,7 +27,7 @@ jobs:
         run: cd open-suite-webapp && ./gradlew test
       - name: Read version file
         id: getversion
-        run: echo "version=$(cat version.txt)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat open-suite-webapp/modules/axelor-open-suite/version.txt)" >> $GITHUB_OUTPUT
       - name: Build Docker
         run: cd open-suite-webapp && docker build --platform linux/amd64 -t nsqr/nsqr-nz-axelor:v${{ steps.getversion.outputs.version }} .
       - name: Check docker images
